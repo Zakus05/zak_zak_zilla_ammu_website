@@ -1,88 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Ammu 🎂💖</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Ammu 🎂</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.154.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+<style>
+    body { margin: 0; overflow-x: hidden; background: #000; color: white; }
+    canvas { position: fixed; top: 0; left: 0; z-index: -1; }
+    .step { display: none; }
+    .active-step { display: block; }
+    @keyframes fall {
+        to {
+            transform: translateY(100vh) rotate(360deg);
+            opacity: 0;
+        }
+    }
+</style>
 </head>
-<body class="bg-gradient-to-br from-pink-200 via-pink-100 to-pink-300 text-center min-h-screen flex flex-col items-center justify-center overflow-hidden">
+<body class="flex flex-col items-center justify-center min-h-screen p-4">
 
-    <!-- Progress bar -->
-    <div class="w-3/4 bg-pink-300 rounded-full h-2 mb-4">
-        <div id="progress-bar" class="bg-pink-600 h-2 rounded-full" style="width: 0%"></div>
-    </div>
+<!-- 3D Hearts Background -->
+<canvas id="bg-canvas"></canvas>
 
-    <!-- Floating heart background -->
-    <canvas id="bg-canvas" class="fixed top-0 left-0 w-full h-full z-0"></canvas>
+<!-- Progress Bar -->
+<div class="w-full max-w-xl bg-gray-700 rounded-full h-2 mb-6">
+  <div id="progress-bar" class="bg-pink-500 h-2 rounded-full" style="width: 0%;"></div>
+</div>
 
-    <!-- Steps -->
-    <div id="steps-container" class="relative z-10 max-w-xl mx-auto p-6 bg-white rounded-3xl shadow-xl bg-opacity-90">
-        <!-- Step 1 -->
-        <div class="step hidden">
-            <h1 class="text-3xl font-bold text-pink-600">🎉 Happy Birthday Ammu 🎉</h1>
-            <p class="mt-4 text-lg">To my cutie, honey, sweety, zak Zak zilla, zaki boom boom 💖</p>
-            <button class="next-btn mt-6 bg-pink-500 text-white px-4 py-2 rounded-lg shadow hover:bg-pink-600">Next ➡️</button>
-        </div>
+<!-- Steps -->
+<div id="step-1" class="step active-step text-center">
+  <h1 class="text-3xl font-bold mb-4">Assalamu Alaikum Ammu ❤️</h1>
+  <p class="mb-4">I have a little surprise for you... 🎁</p>
+  <button id="next-btn-1" class="bg-pink-500 px-4 py-2 rounded-full">Next</button>
+</div>
 
-        <!-- Step 2 -->
-        <div class="step hidden">
-            <h1 class="text-2xl font-bold text-pink-500">🌸 Islamic Wishes 🌸</h1>
-            <p class="mt-4 italic">"May Allah bless you with happiness, health, and Iman, and make you among the most beloved to Him." 🤲</p>
-            <p class="mt-2 text-sm">— Prophet Muhammad ﷺ</p>
-            <button class="next-btn mt-6 bg-pink-500 text-white px-4 py-2 rounded-lg shadow hover:bg-pink-600">Next ➡️</button>
-        </div>
+<div id="step-2" class="step text-center">
+  <h1 class="text-3xl font-bold mb-4">💖 Islamic Blessing 💖</h1>
+  <p class="mb-4">May Allah bless you with endless joy, health, and Imaan 🤲</p>
+  <button id="next-btn-2" class="bg-pink-500 px-4 py-2 rounded-full">Next</button>
+</div>
 
-        <!-- Step 3 -->
-        <div class="step hidden">
-            <h1 class="text-2xl font-bold text-pink-500">❤️ Special Dua ❤️</h1>
-            <p class="mt-4">"Hearts are like vessels, and the best vessel is the one that holds love and kindness." — Hazrat Ali (RA)</p>
-            <button class="next-btn mt-6 bg-pink-500 text-white px-4 py-2 rounded-lg shadow hover:bg-pink-600">Next ➡️</button>
-        </div>
+<div id="step-3" class="step text-center">
+  <h1 class="text-3xl font-bold mb-4">Special Quote ✨</h1>
+  <p class="mb-4">"Hearts are like vessels, they fill with what they love most." – Hazrat Ali (RA)</p>
+  <button id="next-btn-3" class="bg-pink-500 px-4 py-2 rounded-full">Next</button>
+</div>
 
-        <!-- Step 4 -->
-        <div class="step hidden">
-            <h1 class="text-2xl font-bold text-pink-500">🎁 Surprise Time 🎁</h1>
-            <p class="mt-4">Click below for your special birthday surprise!</p>
-            <button id="next-btn-4" class="mt-6 bg-pink-500 text-white px-4 py-2 rounded-lg shadow hover:bg-pink-600">Your Special Surprise 🎁</button>
-        </div>
+<div id="step-4" class="step text-center">
+  <h1 class="text-3xl font-bold mb-4">Are you ready for your surprise? 🎉</h1>
+  <button id="next-btn-4" class="bg-pink-500 px-4 py-2 rounded-full">Your Special Surprise 🎁</button>
+</div>
 
-        <!-- Step 5 -->
-        <div class="step hidden">
-            <h1 class="text-3xl font-bold text-pink-600">💖 Happy Birthday Ammu 💖</h1>
-            <p class="mt-4 text-lg">I love you more than words can say. You are my heart, my soul, and my forever. May Allah bless you always. 🤍</p>
-            <audio id="bg-music" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_3a5b97b4b4.mp3" preload="auto"></audio>
-        </div>
-    </div>
+<div id="step-5" class="step text-center">
+  <h1 class="text-4xl font-bold mb-4">🎂 Happy Birthday Ammu 🎂</h1>
+  <p class="mb-4">You are the most special part of my life ❤️</p>
+  <!-- Countdown Removed Here -->
+</div>
+
+<!-- Music -->
+<audio id="bg-music" loop>
+  <source src="your-music.mp3" type="audio/mpeg">
+</audio>
 
 <script>
-let currentStep = 0;
-const steps = document.querySelectorAll('.step');
-const progressBar = document.getElementById('progress-bar');
+let currentStep = 1;
+const totalSteps = 5;
 
-function showStep(index) {
-    steps.forEach((step, i) => step.classList.toggle('hidden', i !== index));
-    progressBar.style.width = `${(index / (steps.length - 1)) * 100}%`;
-}
-showStep(currentStep);
-
-// Next buttons
-document.querySelectorAll('.next-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        currentStep++;
-        showStep(currentStep);
+function showStep(step) {
+    document.querySelectorAll('.step').forEach((el, idx) => {
+        el.classList.toggle('active-step', idx === step - 1);
     });
-});
+    document.getElementById('progress-bar').style.width = `${(step - 1) / (totalSteps - 1) * 100}%`;
+}
 
-// Step 4 → Step 5 + Celebration
+// Step Buttons
+document.getElementById('next-btn-1').addEventListener('click', () => { currentStep = 2; showStep(currentStep); });
+document.getElementById('next-btn-2').addEventListener('click', () => { currentStep = 3; showStep(currentStep); });
+document.getElementById('next-btn-3').addEventListener('click', () => { currentStep = 4; showStep(currentStep); });
+
 document.getElementById('next-btn-4').addEventListener('click', () => {
-    currentStep = 4;
-    showStep(4);
     currentStep = 5;
-    showStep(5);
+    showStep(currentStep);
 
     // Play background music
     const bgMusic = document.getElementById('bg-music');
@@ -90,13 +92,11 @@ document.getElementById('next-btn-4').addEventListener('click', () => {
         bgMusic.play().catch(err => console.log("Music autoplay blocked:", err));
     }
 
-    // Confetti celebration
+    // Confetti Celebration
     confetti({ particleCount: 200, spread: 120, origin: { y: 0.6 } });
-    setTimeout(() => {
-        confetti({ particleCount: 150, spread: 100, origin: { y: 0.7 } });
-    }, 1000);
+    setTimeout(() => { confetti({ particleCount: 150, spread: 100, origin: { y: 0.7 } }); }, 1000);
 
-    // Heart shower
+    // Heart Shower Animation
     const heartShower = setInterval(() => {
         const heart = document.createElement("div");
         heart.innerHTML = "💖";
@@ -109,64 +109,16 @@ document.getElementById('next-btn-4').addEventListener('click', () => {
         heart.style.pointerEvents = "none";
         heart.style.animation = "fall 4s linear forwards";
         document.body.appendChild(heart);
-        setTimeout(() => heart.remove(), 4000);
+        setTimeout(() => { heart.remove(); }, 4000);
     }, 200);
     setTimeout(() => clearInterval(heartShower), 10000);
 });
 
-// Heart fall CSS
-const style = document.createElement('style');
-style.innerHTML = `
-@keyframes fall {
-    to {
-        transform: translateY(100vh) rotate(360deg);
-        opacity: 0;
-    }
-}`;
-document.head.appendChild(style);
-
-// Floating 3D hearts
+// Three.js Floating Hearts
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('bg-canvas'), alpha: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
 
-const heartShape = new THREE.Shape();
-heartShape.moveTo(0, 0);
-heartShape.bezierCurveTo(0, 0, 0, 0.5, -0.5, 0.5);
-heartShape.bezierCurveTo(-1, 0.5, -1, -0.5, 0, -1);
-heartShape.bezierCurveTo(1, -0.5, 1, 0.5, 0.5, 0.5);
-heartShape.bezierCurveTo(0, 0.5, 0, 0, 0, 0);
-
-const extrudeSettings = { depth: 0.2, bevelEnabled: true, bevelSegments: 2, steps: 2, bevelSize: 0.05, bevelThickness: 0.05 };
-const geometry = new THREE.ExtrudeGeometry(heartShape, extrudeSettings);
-const material = new THREE.MeshPhongMaterial({ color: 0xff69b4 });
-
-let hearts = [];
-for (let i = 0; i < 30; i++) {
-    const mesh = new THREE.Mesh(geometry, material);
-    mesh.position.set((Math.random() - 0.5) * 10, Math.random() * 5, (Math.random() - 0.5) * 10);
-    scene.add(mesh);
-    hearts.push(mesh);
-}
-
-const light = new THREE.PointLight(0xffffff, 1, 100);
-light.position.set(5, 5, 5);
-scene.add(light);
-camera.position.z = 5;
-
-function animate() {
-    requestAnimationFrame(animate);
-    hearts.forEach(h => {
-        h.rotation.x += 0.01;
-        h.rotation.y += 0.01;
-        h.position.y -= 0.01;
-        if (h.position.y < -5) h.position.y = 5;
-    });
-    renderer.render(scene, camera);
-}
-animate();
-</script>
-
-</body>
-</html>
+const heartGeometry = new THREE.SphereGeometry(0.1, 16, 16);
+const he
