@@ -734,22 +734,7 @@ if (checkBirthday()) {
   document.getElementById('birthday-content').style.display = 'none';
   document.getElementById('locked-content').style.display = 'block';
   
-  // Start countdown timer
-  startCountdown();
-}
-
-// Countdown timer function
-function startCountdown() {
-  const birthday = new Date('2025-08-16T00:01:05');
-  
-  function updateCountdown() {
-    const now = new Date();
-    const timeLeft = birthday - now;
-    
-    if (timeLeft <= 0) {
-      // Birthday has arrived!
-      location.reload(); // Reload to show birthday content
-      return;
+ 
     }
     
     const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
@@ -818,3 +803,4 @@ if (checkBirthday()) {
 </script>
 </body>
 </html> 
+
