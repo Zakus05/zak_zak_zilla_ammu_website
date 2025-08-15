@@ -68,28 +68,28 @@
     }
     .btn {
       background: linear-gradient(135deg, #000000, #1a1a1a, #ff69b4, #ff1493);
-      color: white; 
-      border: 2px solid rgba(255,105,180,0.3); 
-      padding: 15px 30px; 
+      color: white;
+      border: 2px solid rgba(255,105,180,0.3);
+      padding: 15px 30px;
       border-radius: 50px;
-      font-weight: 600; 
-      cursor: pointer; 
+      font-weight: 600;
+      cursor: pointer;
       margin-top: 25px;
       transition: all 0.4s ease;
       font-size: 16px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.5), 0 0 20px rgba(255,105,180,0.3);
     }
-    .btn:hover { 
-      transform: translateY(-3px); 
+    .btn:hover {
+      transform: translateY(-3px);
       box-shadow: 0 8px 25px rgba(0,0,0,0.7), 0 0 30px rgba(255,105,180,0.5);
       background: linear-gradient(135deg, #1a1a1a, #000000, #ff69b4, #ff1493);
     }
-    .text-gradient { 
+    .text-gradient {
       background: linear-gradient(135deg, #ff69b4, #ff1493, #ffb6c1);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      font-weight: bold; 
+      font-weight: bold;
     }
     .heart-beat { animation: heartbeat 1.5s ease-in-out infinite; }
     @keyframes heartbeat {
@@ -99,16 +99,16 @@
       75% { transform: scale(1.15); }
       100% { transform: scale(1); }
     }
-    .emoji { 
-      font-size: 4rem; 
-      margin-bottom: 25px; 
-      display: inline-block; 
+    .emoji {
+      font-size: 4rem;
+      margin-bottom: 25px;
+      display: inline-block;
       filter: drop-shadow(0 0 10px rgba(255,105,180,0.5));
     }
     .quote-card, .reason-card {
       background: rgba(0,0,0,0.6);
-      border-radius: 15px; 
-      padding: 15px; 
+      border-radius: 15px;
+      padding: 15px;
       margin: 8px;
       box-shadow: 0 8px 25px rgba(0,0,0,0.5), 0 0 20px rgba(255,105,180,0.2);
       border: 1px solid rgba(0,0,0,0.8);
@@ -135,34 +135,34 @@
       margin: 10px 0;
     }
     #progress-container {
-      position: fixed; 
-      top: 20px; 
-      left: 50%; 
+      position: fixed;
+      top: 20px;
+      left: 50%;
       transform: translateX(-50%);
-      width: 80%; 
-      max-width: 500px; 
+      width: 80%;
+      max-width: 500px;
       height: 8px;
-      background: rgba(0,0,0,0.6); 
-      border-radius: 4px; 
+      background: rgba(0,0,0,0.6);
+      border-radius: 4px;
       z-index: 100;
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255,105,180,0.2);
     }
     #progress-bar {
-      height: 100%; 
+      height: 100%;
       width: 0%;
       background: linear-gradient(90deg, #000000, #1a1a1a, #ff69b4, #ff1493);
-      border-radius: 4px; 
+      border-radius: 4px;
       transition: width 0.6s ease;
       box-shadow: 0 0 15px rgba(255,105,180,0.6), 0 0 10px rgba(0,0,0,0.8);
     }
-    #canvas-container { 
-      position: fixed; 
-      top: 0; 
-      left: 0; 
-      width: 100%; 
-      height: 100%; 
-      z-index: 1; 
+    #canvas-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
     }
     .special-message {
       font-family: 'Dancing Script', cursive;
@@ -190,53 +190,6 @@
       50% { transform: translate(-20px,-30px) rotate(180deg); }
       100% { transform: translate(0,0) rotate(360deg); }
     }
-    
-    .countdown-container {
-      background: rgba(0,0,0,0.6);
-      border-radius: 15px;
-      padding: 15px;
-      margin: 15px 0;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.5), 0 0 20px rgba(255,105,180,0.2);
-      border: 1px solid rgba(0,0,0,0.8);
-      border-top: 1px solid rgba(255,105,180,0.3);
-    }
-    
-    .countdown-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 5px;
-      margin-top: 8px;
-    }
-    
-    .countdown-item {
-      text-align: center;
-      background: rgba(255,105,180,0.1);
-      border-radius: 8px;
-      padding: 8px 3px;
-      border: 1px solid rgba(255,105,180,0.3);
-    }
-    
-    .countdown-number {
-      font-size: 1.25rem;
-      font-weight: bold;
-      color: #ff69b4;
-      text-shadow: 0 0 10px rgba(255,105,180,0.5);
-      margin-bottom: 2px;
-    }
-    
-    .countdown-label {
-      font-size: 0.6rem;
-      color: #ffb6c1;
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
-    }
-    
-    .countdown-title {
-      color: #ffd700;
-      font-family: 'Dancing Script', cursive;
-      text-align: center;
-    }
-    
     .memory-image-container {
       background: rgba(0,0,0,0.4);
       border-radius: 15px;
@@ -247,7 +200,6 @@
       border-top: 1px solid rgba(255,105,180,0.3);
       text-align: center;
     }
-    
     .memory-image {
       width: 100%;
       max-width: 250px;
@@ -256,11 +208,9 @@
       box-shadow: 0 5px 15px rgba(255,105,180,0.3);
       transition: transform 0.3s ease;
     }
-    
     .memory-image:hover {
       transform: scale(1.05);
     }
-    
     .image-caption {
       margin-top: 12px;
       font-family: 'Dancing Script', cursive;
@@ -268,7 +218,6 @@
       color: #ffb6c1;
       text-align: center;
     }
-    
     /* Mobile-specific styles for Step 3 */
     @media (max-width: 768px) {
       #step3 {
@@ -276,131 +225,82 @@
         max-height: 90vh;
         overflow-y: auto;
       }
-      
       #step3 .reason-card,
       #step3 .quote-card {
         padding: 10px !important;
         margin: 5px !important;
         border-radius: 10px !important;
       }
-      
       #step3 .emoji {
         font-size: 1.5rem !important;
         margin-bottom: 10px !important;
       }
-      
       #step3 h3 {
         font-size: 0.875rem !important;
         margin-bottom: 5px !important;
       }
-      
       #step3 p {
         font-size: 0.75rem !important;
         margin-bottom: 5px !important;
       }
-      
       #step3 .islamic-quote,
       #step3 .arabic-text {
         font-size: 0.75rem !important;
       }
-      
       #step3 .btn {
         padding: 10px 20px !important;
         font-size: 14px !important;
         margin-top: 15px !important;
       }
-      
       /* Mobile styles for Step 5 (locked content) */
       #step5 {
         padding: 15px !important;
         max-height: 90vh;
         overflow-y: auto;
       }
-      
       #step5 .emoji {
         font-size: 1.5rem !important;
         margin-bottom: 10px !important;
       }
-      
       #step5 h2 {
         font-size: 1rem !important;
         margin-bottom: 10px !important;
       }
-      
-      #step5 .countdown-container {
-        padding: 8px !important;
-        margin: 8px 0 !important;
-        border-radius: 8px !important;
-      }
-      
-      #step5 .countdown-title {
-        font-size: 0.75rem !important;
-        margin-bottom: 8px !important;
-      }
-      
-      #step5 .countdown-grid {
-        gap: 3px !important;
-        margin-top: 6px !important;
-      }
-      
-      #step5 .countdown-item {
-        padding: 6px 2px !important;
-        border-radius: 6px !important;
-      }
-      
-      #step5 .countdown-number {
-        font-size: 1rem !important;
-        margin-bottom: 1px !important;
-      }
-      
-      #step5 .countdown-label {
-        font-size: 0.5rem !important;
-        letter-spacing: 0.2px !important;
-      }
-      
       #step5 p {
         font-size: 0.75rem !important;
         margin-bottom: 10px !important;
       }
-      
       /* Mobile styles for Step 4 image */
       #step4 {
         padding: 20px !important;
         max-height: 90vh;
         overflow-y: auto;
       }
-      
       #step4 .memory-image-container {
         padding: 10px !important;
         margin: 10px 0 !important;
         border-radius: 10px !important;
       }
-      
       #step4 .memory-image {
         max-width: 200px !important;
         border-radius: 8px !important;
       }
-      
       #step4 .image-caption {
         font-size: 0.875rem !important;
         margin-top: 8px !important;
       }
-      
       #step4 h2 {
         font-size: 1.5rem !important;
         margin-bottom: 15px !important;
       }
-      
       #step4 .special-message {
         font-size: 1rem !important;
         margin-bottom: 15px !important;
       }
-      
       #step4 .quote-card {
         padding: 12px !important;
         margin: 8px !important;
       }
-      
       #step4 .blessing-text {
         font-size: 1rem !important;
         margin-top: 15px !important;
@@ -414,7 +314,6 @@
     <div id="progress-container"><div id="progress-bar"></div></div>
     <div id="content">
 
-      <!-- Step 1 -->
       <div class="step active" id="step1">
         <div class="emoji heart-beat">❤️</div>
         <h1 class="text-5xl md:text-6xl font-bold mb-8 text-gradient">Assalamu Alaikum Ammu</h1>
@@ -426,7 +325,6 @@
         <button class="btn" id="start-btn">Begin Our Journey ❤️</button>
       </div>
 
-      <!-- Step 2 -->
       <div class="step" id="step2">
         <div class="emoji">🎂</div>
         <h2 class="text-4xl font-bold mb-8 text-gradient">Happy Birthday My Beloved!</h2>
@@ -437,7 +335,6 @@
         <button class="btn" id="next-btn-2">Continue Our Love Story 💕</button>
       </div>
 
-      <!-- Step 3 (Mobile Optimized) -->
       <div class="step" id="step3">
         <h2 class="text-xl font-bold mb-3 text-gradient">Why You Are My Everything</h2>
         <div class="grid grid-cols-1 gap-2 mb-3">
@@ -474,7 +371,7 @@
             </div>
           </div>
         </div>
-        
+
         <div class="quote-card mt-2">
           <div class="islamic-quote text-xs">
             "O Fatima, you are the most precious thing to me in this world"
@@ -484,7 +381,7 @@
           </div>
           <p class="mt-1 text-xs">- Hazrat Ali (RA) to Fatima (RA)</p>
         </div>
-        
+
         <div class="quote-card mt-2">
           <div class="islamic-quote text-xs">
             "Ayesha, you are the love of my heart and the comfort of my soul"
@@ -494,7 +391,7 @@
           </div>
           <p class="mt-1 text-xs">- Prophet Muhammad ﷺ to Ayesha (RA)</p>
         </div>
-        
+
         <div class="quote-card mt-2">
           <div class="islamic-quote text-xs">
             "My beloved, you are the light of my eyes and the joy of my heart"
@@ -504,25 +401,24 @@
           </div>
           <p class="mt-1 text-xs">- For my beloved Ammu</p>
         </div>
-        
+
         <button class="btn" id="next-btn-3">Discover More Blessings 🌸</button>
       </div>
 
-      <!-- Step 4 -->
       <div class="step" id="step4">
         <div class="emoji">📸</div>
         <h2 class="text-4xl font-bold mb-8 text-gradient">Our Precious Memories</h2>
         <div class="special-message mb-6 rotating-quote"></div>
-        
+
         <div class="memory-image-container mb-4">
-          <img src="doctor-cherry.jpg" 
-               alt="Beautiful anime doctor with cherry blossoms - my darling Ammu" 
+          <img src="doctor-cherry.jpg"
+               alt="Beautiful anime doctor with cherry blossoms - my darling Ammu"
                class="memory-image">
           <div class="image-caption">
             My beautiful Ammu, my darling, my everything 💕
           </div>
         </div>
-        
+
         <div class="quote-card">
           <div class="islamic-quote">
             "Verily, with hardship comes ease"
@@ -538,9 +434,8 @@
         <button class="btn" id="next-btn-4">Your Special Surprise 🎁</button>
       </div>
 
-      <!-- Step 5 -->
       <div class="step" id="step5">
-        <div id="birthday-content" style="display: none;">
+        <div id="birthday-content">
           <div class="emoji">🎂</div>
           <h2 class="text-4xl font-bold mb-8 text-gradient">Happy Birthday Ammu ❤️</h2>
           <div class="special-message mb-6">
@@ -555,32 +450,6 @@
           <div class="rotating-quote mb-6"></div>
           <button class="btn" id="confetti-btn">Celebrate Our Love! 🎉</button>
         </div>
-        <div id="locked-content">
-          <div class="emoji text-3xl">⏳</div>
-          <h2 class="text-2xl font-bold mb-4 text-gradient">Locked Until 16 Aug 2025</h2>
-          <div class="countdown-container mb-4">
-            <div class="countdown-title text-lg mb-3">Time Until Your Special Day:</div>
-            <div class="countdown-grid">
-              <div class="countdown-item">
-                <div class="countdown-number" id="days">00</div>
-                <div class="countdown-label">Days</div>
-              </div>
-              <div class="countdown-item">
-                <div class="countdown-number" id="hours">00</div>
-                <div class="countdown-label">Hours</div>
-              </div>
-              <div class="countdown-item">
-                <div class="countdown-number" id="minutes">00</div>
-                <div class="countdown-label">Minutes</div>
-              </div>
-              <div class="countdown-item">
-                <div class="countdown-number" id="seconds">00</div>
-                <div class="countdown-label">Seconds</div>
-              </div>
-            </div>
-          </div>
-          <p class="text-lg mb-4">Come back on your birthday for a special surprise from your beloved ❤️</p>
-        </div>
       </div>
 
     </div>
@@ -591,13 +460,6 @@
 </audio>
 
 <script>
-// Birthday check logic
-function checkBirthday() {
-  const birthday = new Date('2025-08-16');
-  const today = new Date();
-  return today >= birthday;
-}
-
 const container = document.getElementById('canvas-container');
 const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -617,21 +479,21 @@ heartShape.bezierCurveTo(0.5, 3.5, 2, 2.5, 2, 1.5);
 heartShape.bezierCurveTo(2, 1.5, 2, 0, 1, 0);
 heartShape.bezierCurveTo(0.5, 0, 0.5, 0.5, 0.5, 0.5);
 
-const extrudeSettings = { 
-  depth: 0.8, 
-  bevelEnabled: true, 
-  bevelSegments: 5, 
-  bevelSize: 0.3, 
-  bevelThickness: 0.4 
+const extrudeSettings = {
+  depth: 0.8,
+  bevelEnabled: true,
+  bevelSegments: 5,
+  bevelSize: 0.3,
+  bevelThickness: 0.4
 };
 const heartGeometry = new THREE.ExtrudeGeometry(heartShape, extrudeSettings);
 
 const hearts = [];
 const colors = [0xff69b4, 0xff1493, 0xffb6c1, 0xffd700, 0xff6347, 0x000000, 0x1a1a1a];
 for (let i = 0; i < 25; i++) {
-  const material = new THREE.MeshPhongMaterial({ 
-    color: colors[Math.floor(Math.random()*colors.length)], 
-    transparent: true, 
+  const material = new THREE.MeshPhongMaterial({
+    color: colors[Math.floor(Math.random()*colors.length)],
+    transparent: true,
     opacity: 0.9,
     shininess: 100
   });
@@ -642,16 +504,16 @@ for (let i = 0; i < 25; i++) {
   const scale = Math.random()*1.2+0.8;
   heart.scale.set(scale, scale, scale);
   heart.userData = {
-    rotationSpeedX: Math.random()*0.02, 
+    rotationSpeedX: Math.random()*0.02,
     rotationSpeedY: Math.random()*0.02,
     floatSpeed: Math.random()*0.01
   };
-  scene.add(heart); 
+  scene.add(heart);
   hearts.push(heart);
 }
 
 const light = new THREE.PointLight(0xffffff, 1.5);
-light.position.set(10, 10, 10); 
+light.position.set(10, 10, 10);
 scene.add(light);
 scene.add(new THREE.AmbientLight(0x202020, 0.4));
 scene.add(new THREE.SpotLight(0xff69b4, 1));
@@ -659,7 +521,7 @@ scene.add(new THREE.SpotLight(0xff69b4, 1));
 function animate() {
   requestAnimationFrame(animate);
   hearts.forEach(h => {
-    h.rotation.x += h.userData.rotationSpeedX; 
+    h.rotation.x += h.userData.rotationSpeedX;
     h.rotation.y += h.userData.rotationSpeedY;
     h.position.z += Math.sin(Date.now() * h.userData.floatSpeed) * 0.02;
   });
@@ -668,7 +530,7 @@ function animate() {
 animate();
 
 window.addEventListener('resize', () => {
-  camera.aspect = window.innerWidth / window.innerHeight; 
+  camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
 });
@@ -726,33 +588,6 @@ function addFloatingHearts() {
   }
 }
 
-// Initialize birthday content
-if (checkBirthday()) {
-  document.getElementById('birthday-content').style.display = 'block';
-  document.getElementById('locked-content').style.display = 'none';
-} else {
-  document.getElementById('birthday-content').style.display = 'none';
-  document.getElementById('locked-content').style.display = 'block';
-  
- 
-    }
-    
-    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-    
-    document.getElementById('days').textContent = days.toString().padStart(2, '0');
-    document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-    document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-    document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-  }
-  
-  // Update countdown every second
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
-}
-
 typeWriter(document.querySelector('#intro-text'), "My beloved Ammu, my heart's treasure, my darling...");
 
 document.getElementById('start-btn').addEventListener('click', () => {
@@ -765,12 +600,12 @@ document.getElementById('start-btn').addEventListener('click', () => {
   ]);
 });
 
-document.getElementById('next-btn-2').addEventListener('click', () => { 
-  currentStep = 2; showStep(currentStep); 
+document.getElementById('next-btn-2').addEventListener('click', () => {
+  currentStep = 2; showStep(currentStep);
 });
 
-document.getElementById('next-btn-3').addEventListener('click', () => { 
-  currentStep = 3; showStep(currentStep); 
+document.getElementById('next-btn-3').addEventListener('click', () => {
+  currentStep = 3; showStep(currentStep);
   fadeQuotes('step4', [
     "Every moment with you is a memory written in gold, my cutie!",
     "Our love grows stronger through every storm, my darling!",
@@ -778,7 +613,7 @@ document.getElementById('next-btn-3').addEventListener('click', () => {
   ]);
 });
 
-document.getElementById('next-btn-4').addEventListener('click', () => { 
+document.getElementById('next-btn-4').addEventListener('click', () => {
   currentStep = 4; showStep(currentStep);
   fadeQuotes('step5', [
     "Happy Birthday to my everything ❤️",
@@ -789,18 +624,15 @@ document.getElementById('next-btn-4').addEventListener('click', () => {
   ]);
 });
 
-// Confetti button (only if birthday is unlocked)
-if (checkBirthday()) {
-  document.getElementById('confetti-btn').addEventListener('click', () => {
-    confetti({ 
-      particleCount: 150, 
-      spread: 100, 
-      origin: { y: 0.6 },
-      colors: ['#ff69b4', '#ff1493', '#ffd700', '#ffb6c1']
-    });
+// Confetti button
+document.getElementById('confetti-btn').addEventListener('click', () => {
+  confetti({
+    particleCount: 150,
+    spread: 100,
+    origin: { y: 0.6 },
+    colors: ['#ff69b4', '#ff1493', '#ffd700', '#ffb6c1']
   });
-}
+});
 </script>
 </body>
-</html> 
-
+</html>
